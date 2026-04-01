@@ -1,0 +1,35 @@
+name: igclone
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Typography & Icons
+  google_fonts: ^6.2.1
+  cupertino_icons: ^1.0.8
+  # Logic
+  timeago: ^3.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  # FIX: Exactly 2 spaces before 'assets', 4 spaces before the '-'
+  assets:
+    - assets/images/
+    - assets/fonts/
+
+  # FIX: Exactly 2 spaces before 'fonts', 4 spaces for 'family' and 'fonts', 8 for the asset path
+  fonts:
+    - family: Billabong
+      fonts:
+        - asset: assets/fonts/Billabong.ttf
