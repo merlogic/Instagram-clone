@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:igclone/features/reels/reels_screen.dart';
 import 'package:igclone/features/search/search_screen.dart'; 
 import '../feed/feed_screen.dart';
 import '../profile/profile_screen.dart';
@@ -41,7 +42,7 @@ class _MainScreenState extends State<MainScreen> {
         physics: const NeverScrollableScrollPhysics(), 
         children: [
           FeedScreen(),
-          const Center(child: Text('Reels Content')), // Updated placeholder
+          const ReelsScreen(), // Updated placeholder
           const Center(child: Text('Messages/Inbox')), 
           const SearchScreen(),
           const ProfileScreen(),
