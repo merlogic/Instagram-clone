@@ -4,17 +4,19 @@ This is a Flutter-based Instagram clone focused on clean design and smooth user 
 
 ## 📱 Interface Preview
 
+## 📱 Interface Preview
+
 ### Mobile Experience
 | Feed | Message | Search | Reels | Profile |
 | :---: | :---: | :---: | :---: | :---: |
-| ![Feed](screenshots/feed.png) | ![Message](screenshots/message.png) | ![Search](screenshots/search.png) | ![Reels](screenshots/reels.png) | ![Profile](screenshots/profile.png) |
+| ![Feed](screenshots/feed.PNG) | ![Message](screenshots/message.PNG) | ![Search](screenshots/search.PNG) | ![Reels](screenshots/reels.PNG) | ![Profile](screenshots/profile.PNG) |
 
 ---
 
 ### 💻 Desktop & Web Responsive Layout
 | Home Feed | Reels Explorer | Profile Settings |
 | :---: | :---: | :---: |
-| ![Desktop Feed](screenshots/res_feed.png) | ![Desktop Reels](screenshots/res_reel.png) | ![Desktop Profile](screenshots/res_profile.png) |
+| ![Desktop Feed](screenshots/res_feed.PNG) | ![Desktop Reels](screenshots/res_reel.PNG) | ![Desktop Profile](screenshots/res_profile.PNG) |
 
 ---
 
