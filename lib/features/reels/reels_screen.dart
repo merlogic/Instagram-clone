@@ -20,6 +20,12 @@ class ReelsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Determine screen width
+    double width = MediaQuery.of(context).size.width;
+    
+    // Dynamic column count: 3 for mobile, 5 for tablet, 7 for web/desktop
+    int crossAxisCount = width < 600 ? 3 : (width < 1000 ? 5 : 7);
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -31,7 +37,7 @@ class ReelsScreen extends StatelessWidget {
           style: TextStyle(
             color: Colors.black, 
             fontWeight: FontWeight.bold,
-            fontSize: 20, // Slightly smaller title
+            fontSize: 20,
           ),
         ),
         actions: [
@@ -44,15 +50,14 @@ class ReelsScreen extends StatelessWidget {
       body: GridView.builder(
         padding: const EdgeInsets.all(1), 
         itemCount: reelAssets.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3, // Keep 3 or change to 4 for even smaller boxes
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: crossAxisCount, 
           crossAxisSpacing: 2, 
           mainAxisSpacing: 2,  
-          childAspectRatio: 0.8, // Changed from 0.62 to 0.8 (Less "tall", more natural)
+          childAspectRatio: 0.8, 
         ),
         itemBuilder: (context, index) {
           return ClipRRect(
-            // Optional: adds a tiny rounded corner like modern UI
             borderRadius: BorderRadius.circular(2),
             child: Stack(
               fit: StackFit.expand,
@@ -60,18 +65,25 @@ class ReelsScreen extends StatelessWidget {
                 Image.asset(
                   reelAssets[index],
                   fit: BoxFit.cover, 
+                  // Fallback for missing images to prevent red screen
+                  errorBuilder: (context, error, stackTrace) => Container(
+                    color: Colors.grey[200],
+                    child: const Icon(Icons.image_not_supported, color: Colors.grey),
+                  ),
                 ),
                 
+                // Overlay View Count
                 Positioned(
-                  bottom: 5,
-                  left: 5,
+                  bottom: 8,
+                  left: 8,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.3),
+                      color: Colors.black.withOpacity(0.4),
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: const [
                         Icon(Icons.play_arrow_outlined, color: Colors.white, size: 14),
                         SizedBox(width: 2),
@@ -79,7 +91,7 @@ class ReelsScreen extends StatelessWidget {
                           '125K',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 10,
+                            fontSize: 11,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
