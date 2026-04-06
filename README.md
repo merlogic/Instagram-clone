@@ -2,6 +2,22 @@
 
 This is a Flutter-based Instagram clone focused on clean design and smooth user experience. The app uses a modern UI with glass-style elements and simple navigation across different screens.
 
+## 📱 Interface Preview
+
+### Mobile Experience
+| Feed | Message | Search | Reels | Profile |
+| :---: | :---: | :---: | :---: | :---: |
+| ![Feed](screenshots/feed.png) | ![Message](screenshots/message.png) | ![Search](screenshots/search.png) | ![Reels](screenshots/reels.png) | ![Profile](screenshots/profile.png) |
+
+---
+
+### 💻 Desktop & Web Responsive Layout
+| Home Feed | Reels Explorer | Profile Settings |
+| :---: | :---: | :---: |
+| ![Desktop Feed](screenshots/res_feed.png) | ![Desktop Reels](screenshots/res_reel.png) | ![Desktop Profile](screenshots/res_profile.png) |
+
+---
+
 ## Features
 
 * Feed with interactive posts 
@@ -10,25 +26,27 @@ This is a Flutter-based Instagram clone focused on clean design and smooth user 
 * Glass-style bottom navigation bar with blur effect
 * Multiple sections: Home, Reels, Messages, Search, and Profile
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-* Framework: Flutter
-* Language: Dart
-* UI Style: Minimalist with glassmorphism
-* Icons: Material Icons
+* **Framework:** [Flutter](https://flutter.dev)
+* **Language:** [Dart](https://dart.dev)
+* **Design:** Responsive LayoutBuilder & Custom Glassmorphic Widgets.
+* **Backend Ready:** Structured for easy integration with **Supabase** or **Firebase**.
 
-## Project Structure
+## 📂 Project Structure
 
 ```text
 lib/
 ├── features/
-│   ├── feed/          # Feed and stories
-│   ├── search/        # Search screen
-│   └── profile/       # Profile layout
+│   ├── feed/          # Newsfeed & Story UI logic
+│   ├── message/       # Chat and inbox screens
+│   ├── reels/         # Full-screen video layout
+│   ├── search/        # Discovery and search grid
+│   └── profile/       # User profile & Responsive settings
 ├── shared/
-│   └── widgets/       # Reusable components
-└── main_screen.dart   # Navigation logic
-```
+│   └── widgets/       # Reusable components (PostCards, Avatars)
+└── main_screen.dart   # Responsive navigation controller
+
 
 ## ⚙️ Installation & Setup
 
@@ -55,7 +73,3 @@ flutter pub get
 ```bash
 flutter run
 ```
-
----
-
-Developed as part of a Flutter UI practice project.
